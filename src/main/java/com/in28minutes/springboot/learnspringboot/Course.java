@@ -4,11 +4,9 @@ public class Course {
 	
 private String port;
 	private long id;
-	private String hello;
 	private String name;
 	private String author;
-	private String welcome;
-	private String car;
+	
 
 
 	//Getters,ToString,Constructor
@@ -39,6 +37,5 @@ private String port;
 		return "Course [id=" + id + ", name=" + name + ", author=" + author + "]";
 	}
 
-	int i=10;
 
 }
