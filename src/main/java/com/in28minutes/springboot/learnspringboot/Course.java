@@ -10,6 +10,7 @@ private String port;
 	private String welcome;
 	private String car;
 
+
 	//Getters,ToString,Constructor
 	public Course(long id, String name, String author) {
 		super();
