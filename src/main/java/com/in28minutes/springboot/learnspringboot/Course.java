@@ -8,6 +8,7 @@ private String port;
 	private String name;
 	private String author;
 	private String welcome;
+	private String mama;
 
 	//Getters,ToString,Constructor
 	public Course(long id, String name, String author) {
