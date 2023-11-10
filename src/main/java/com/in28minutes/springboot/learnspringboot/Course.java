@@ -3,9 +3,10 @@ package com.in28minutes.springboot.learnspringboot;
 public class Course {
 
 	private long id;
-private String hello;
+	private String hello;
 	private String name;
 	private String author;
+	private String welcome;
 
 	//Getters,ToString,Constructor
 	public Course(long id, String name, String author) {
