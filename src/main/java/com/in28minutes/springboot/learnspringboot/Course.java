@@ -4,9 +4,10 @@ public class Course {
 	
 private String port;
 	private long id;
-private String hello;
+	private String hello;
 	private String name;
 	private String author;
+	private String welcome;
 
 	//Getters,ToString,Constructor
 	public Course(long id, String name, String author) {
