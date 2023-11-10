@@ -1,0 +1,157 @@
+dev
+------
+logging.level.org.springframework = trace
+
+prod
+-------
+logging.level.org.springframework = info
+
+Logging Hierearchy
+-------------------
+trace
+debug
+info
+error
+
+How Do You Deploy Your Application
+-----------------------------------
+Step 1: Install Java
+Step 2: Install Web/Application Server
+    Tomcat/Websphere/WebLogic Etc
+Step 3: Deploy the application WAR(Web Archive)
+	This is old WAR Approach
+		So,Complex to setUp!
+	
+Embedded Server -Simpler alternative
+-----------------------------------
+Step 1:Install Java
+Step 2: Run JAR file
+Building jar : 
+first right click on project run As -> maven build -> clean install
+Then you will get this project location in console copy that -> C:\Users\srinu shaik\.m2\repository\com\in28minutes\springboot\learn-spring-boot\0.0.1-SNAPSHOT
+
+open cmd and enter cd C:\Users\srinu shaik\.m2\repository\com\in28minutes\springboot\learn-spring-boot\0.0.1-SNAPSHOT
+java -jar learn-spring-boot-0.0.1-SNAPSHOT.jar
+
+You can run in this way also your spring-boot-application 
+
+
+
+Spring Boot Actuator
+---------------------
+Monitor and manage your application in your production
+-Provides a number of EndPoints
+/beans - complete list of spring beans in your app
+/health - Application health information (This is the actuator default endPoint)
+/metrics - application Metrics
+/mappings - Details around Request Mappings
+
+http://localhost:8080/actuator
+{
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/actuator",
+            "templated": false
+        },
+        "health-path": {
+            "href": "http://localhost:8080/actuator/health/{*path}",
+            "templated": true
+        },
+        "health": {
+            "href": "http://localhost:8080/actuator/health",
+            "templated": false
+        }
+    }
+}
+If you want all end points you need to write one property in application.properties
+management.endpoints.web.exposure.include= *
+
+Then you will get this many endpoints
+
+{
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/actuator",
+            "templated": false
+        },
+        "beans": {
+            "href": "http://localhost:8080/actuator/beans",
+            "templated": false
+        },
+        "caches-cache": {
+            "href": "http://localhost:8080/actuator/caches/{cache}",
+            "templated": true
+        },
+        "caches": {
+            "href": "http://localhost:8080/actuator/caches",
+            "templated": false
+        },
+        "health-path": {
+            "href": "http://localhost:8080/actuator/health/{*path}",
+            "templated": true
+        },
+        "health": {
+            "href": "http://localhost:8080/actuator/health",
+            "templated": false
+        },
+        "info": {
+            "href": "http://localhost:8080/actuator/info",
+            "templated": false
+        },
+        "conditions": {
+            "href": "http://localhost:8080/actuator/conditions",
+            "templated": false
+        },
+        "configprops": {
+            "href": "http://localhost:8080/actuator/configprops",
+            "templated": false
+        },
+        "configprops-prefix": {
+            "href": "http://localhost:8080/actuator/configprops/{prefix}",
+            "templated": true
+        },
+        "env-toMatch": {
+            "href": "http://localhost:8080/actuator/env/{toMatch}",
+            "templated": true
+        },
+        "env": {
+            "href": "http://localhost:8080/actuator/env",
+            "templated": false
+        },
+        "loggers": {
+            "href": "http://localhost:8080/actuator/loggers",
+            "templated": false
+        },
+        "loggers-name": {
+            "href": "http://localhost:8080/actuator/loggers/{name}",
+            "templated": true
+        },
+        "heapdump": {
+            "href": "http://localhost:8080/actuator/heapdump",
+            "templated": false
+        },
+        "threaddump": {
+            "href": "http://localhost:8080/actuator/threaddump",
+            "templated": false
+        },
+        "metrics-requiredMetricName": {
+            "href": "http://localhost:8080/actuator/metrics/{requiredMetricName}",
+            "templated": true
+        },
+        "metrics": {
+            "href": "http://localhost:8080/actuator/metrics",
+            "templated": false
+        },
+        "scheduledtasks": {
+            "href": "http://localhost:8080/actuator/scheduledtasks",
+            "templated": false
+        },
+        "mappings": {
+            "href": "http://localhost:8080/actuator/mappings",
+            "templated": false
+        }
+    }
+}
+
+
+
