@@ -34,4 +34,6 @@ public class Course {
 		return "Course [id=" + id + ", name=" + name + ", author=" + author + "]";
 	}
 
+	int i=10;
+
 }
