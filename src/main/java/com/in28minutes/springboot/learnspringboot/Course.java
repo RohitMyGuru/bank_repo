@@ -4,8 +4,8 @@ public class Course {
 
 	private long id;
 	private String name;
-	private String author;
-
+	private String author;	
+	private String name;
 	//Getters,ToString,Constructor
 	public Course(long id, String name, String author) {
 		super();
