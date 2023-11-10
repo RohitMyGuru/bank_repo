@@ -1,7 +1,8 @@
 package com.in28minutes.springboot.learnspringboot;
 
 public class Course {
-
+	
+private String port;
 	private long id;
 private String hello;
 	private String name;
